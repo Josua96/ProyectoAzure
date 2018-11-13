@@ -1,0 +1,43 @@
+.fileChoser{
+    
+    text-align: center;
+    margin: 5% 20% 20% 35%;
+    align-content: center;
+    width: 25%;
+    align-items: center;
+    background-color: beige;
+}
+
+.requestButton{
+    align-self:center;
+    color:white;
+    background-color: green;
+}
+
+.requestButton:hover{
+    align-self: center;
+    background-color: lightgreen
+}
+
+.totalRequest{
+    color: white;
+    font-size: large;
+    background: blue;
+}
+
+.remainingRequest{
+    color: white;
+    font-size: large;
+    background: red;
+}
+
+.endRequest{
+    color: white;
+    font-size: large;
+    background: green;
+}
+
+.requestData{
+    float: right;
+    
+}
