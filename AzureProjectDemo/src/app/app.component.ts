@@ -58,7 +58,7 @@ export class AppComponent {
     this.totalRequest= this.lines.length;
     this.remainingRequest=this.lines.length;
 
-    for (let i=0; i < 3; i++ ){
+    for (let i=0; i < limit ; i++ ){
 
       
       this.remainingRequest-=1;
@@ -67,13 +67,13 @@ export class AppComponent {
       
       this.queueService.sendMessage(this.lines[i]).subscribe((response) =>{ 
 
-        this.finishedRequest+=1;
-        console.log("azure response");
-        console.log(response);
+        if (response["status"]===true){
+          this.finishedRequest+=1;
+        }
 
       },
       (err) => {
-        console.log(err.json()); 
+        console.log("Error happens"); 
       });
       
     }
