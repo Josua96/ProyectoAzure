@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  serviceUrl:"https://apitaskso.azurewebsites.net/api/HttpTrigger1?code=NvAazVaa73a47rHdYTa3taI3VLj1j8uMW0IgO1DiMmkPWhfza78uBw=="
 };
 
 /*

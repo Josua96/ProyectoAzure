@@ -21,23 +21,32 @@
 
 .totalRequest{
     color: white;
+    margin-right: 2%;
     font-size: large;
     background: blue;
 }
 
 .remainingRequest{
     color: white;
+    margin-left: 2%;
+    margin-right: 2%;
     font-size: large;
     background: red;
 }
 
 .endRequest{
     color: white;
+    margin-right: 2%;
+    margin-left: 2%;
     font-size: large;
     background: green;
 }
 
 .requestData{
-    float: right;
-    
+    margin-top: 4%;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: white;
+
 }

@@ -22,11 +22,17 @@
 
 -->
 <br> <br>
+
 <h1 style="text-align:center"> Azure queue storage demo from angular 6</h1>
 
-<div class="container-fluid fileChoser">
+<div class="container-fluid requestData">
+    <span class="totalRequest"> Total de peticiones: {{totalRequest}}  </span>
+    <span class="remainingRequest"> Peticiones pendientes: {{remainingRequest}} </span>
+    <span class="endRequest"> Peticiones realizadas: {{finishedRequest}} </span>
+    
+  </div>
 
-  <br>
+<div class="container-fluid fileChoser">
 
   <h3><label for="fileChoose" id="lbl">Seleccionar un archivo csv </label></h3>
   <input id="fileChoose" type="file" accept=".csv" (change)="fileChanged($event)">
@@ -35,9 +41,4 @@
   <br> <br>
 </div>
 
-<div class="container-fluid requestData">
-    <span class="totalRequest"> Total de peticiones: {{totalRequest}}  </span>
-    <span class="remainingRequest"> Peticiones pendientes: {{remainingRequest}} </span>
-    <span class="endRequest"> Peticiones realizadas: {{finishedRequest}} </span>
-  
-  </div>
+

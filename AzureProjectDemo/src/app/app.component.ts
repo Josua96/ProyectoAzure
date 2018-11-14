@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AzureDemoService } from './azure-demo.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
   public finishedRequest:number=0;
 
 
-  constructor(){
+  constructor(private queueService: AzureDemoService){
 
   }
 
@@ -44,12 +45,43 @@ export class AppComponent {
       this.lines = (fileReader.result as String).split('\r\n');
       console.log("lineas leídas");
       console.log(this.lines);
+      this.makeRequest();
     }
   
     fileReader.readAsText(this.file,"UTF-8");
 
   }
 
- // makeRequest
+  makeRequest(){
+
+    let limit= this.lines.length;
+    this.totalRequest= this.lines.length;
+    this.remainingRequest=this.lines.length;
+
+    for (let i=0; i < 3; i++ ){
+
+      
+      this.remainingRequest-=1;
+      if (this.lines[i].length > 0){
+
+      
+      this.queueService.sendMessage(this.lines[i]).subscribe((response) =>{ 
+
+        this.finishedRequest+=1;
+        console.log("azure response");
+        console.log(response);
+
+      },
+      (err) => {
+        console.log(err.json()); 
+      });
+      
+    }
+      
+
+
+    }
+
+  }
 
 }
