@@ -17,7 +17,8 @@ export class AzureDemoService {
   
   sendMessage(message:String){
 
-    return this.http.get(environment.serviceUrl+`&message=${message}`)
+    return this.http.get(environment.serviceUrl+`&message=${message}`);
+    
   }
 
 }
