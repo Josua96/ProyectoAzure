@@ -33,18 +33,11 @@ export class AppComponent {
     }
 
     let fileReader = new FileReader();
-    fileReader.onload = (e) => {
-
-      console.log("contenido del archivo");
-      console.log(fileReader.result);
-
-    }
 
     fileReader.onloadend=()=>{
 
       this.lines = (fileReader.result as String).split('\r\n');
-      console.log("lineas leídas");
-      console.log(this.lines);
+
       this.makeRequest();
     }
   
@@ -62,6 +55,7 @@ export class AppComponent {
 
       
       this.remainingRequest-=1;
+
       if (this.lines[i].length > 0){
 
       
